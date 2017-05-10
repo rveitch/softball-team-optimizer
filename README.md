@@ -2,7 +2,7 @@
 (description)
 
 ## Local Setup
-- `$ git clone https://github.com/rveitch/docraptor-logs.git`
+- `$ git clone https://github.com/rveitch/softball-team-optimizer.git`
 - `$ npm install`
 - Copy `template.env.txt` and rename it to `.env`
 - Add your local environment variable keys to the `.env` file and save it.
@@ -16,6 +16,20 @@ Realm supports the following basic types: `bool`, `int`, `float`, `double`, `str
 - `string` properties map to String
 - `data` properties map to ArrayBuffer
 - `date` properties map to Date
+
+### Realm - Advanced Property Types
+Realm supports the following advanced types: `Object`, and `List`.
+- `Object` - For object types you specify the `name` property of the object schema you are referencing.
+- `List`- For list properties you must specify the property type as `list` as well as the `objectType`.
+
+```
+const PersonSchema = {
+  name: 'Person',
+  properties: {
+    cars: {type: 'list', objectType: 'Car'},
+  }
+}
+```
 
 #### Reference
 - https://realm.io/docs/javascript/latest/
